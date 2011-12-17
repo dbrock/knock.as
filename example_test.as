@@ -8,6 +8,10 @@ package {
       ok(true, "a")
       eq(1, 1, "b")
       eq(1, 2)
+
+      eq(123, "123")
+      Knock.equal = function (a: *, b: *): Boolean { return a === b }
+      eq(123, "123")
     }
   }
 }
