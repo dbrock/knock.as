@@ -6,8 +6,12 @@ task :default => :test
 
 swc = "knock.swc"
 
-file swc => FileList["src/**/*"] do |t|
+file swc => FileList["lib/stdio.swc", "src/**/*"] do |t|
   sh "fcshc lib src -o #{swc}"
+end
+
+file "lib/stdio.swc" do |t|
+  abort "missing #{t.name}"
 end
 
 file "example_test.swf" => [swc, "example_test.as"] do
