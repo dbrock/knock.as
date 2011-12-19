@@ -28,6 +28,7 @@ And now we’ll run it, using [`run-swf`][]:
     $ run-swf example_test.swf
     ok - basic arithmetic
     not ok - floating-point math
+    # expected 3.3, got 3.3000000000000003
 
 Pretty easy, right?
 
