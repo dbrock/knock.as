@@ -2,5 +2,7 @@ ok
 ok - a
 ok - b
 not ok
+# expected 2, got 1
 ok
 not ok
+# expected "123", got 123

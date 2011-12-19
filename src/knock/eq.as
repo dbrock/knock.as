@@ -1,5 +1,7 @@
 package knock {
-  public function eq(a: *, b: *, desc: String = null): void {
-    ok((Knock.equal)(a, b), desc)
+  public function eq(actual: *, expected: *, desc: String = null): void {
+    ok((Knock.equal)(actual, expected), desc, function (): String {
+      return "expected " + inspect(expected) + ", got " + inspect(actual)
+    })
   }
 }
