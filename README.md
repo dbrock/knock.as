@@ -21,7 +21,7 @@ Here’s an example test:
 
 Let’s compile it using [`fcshc`][]:
 
-    $ fcshc knock.swc example_test.as
+    $ fcshc example_test.as -l knock
 
 And now we’ll run it, using [`run-swf`][]:
 
