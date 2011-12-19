@@ -9,6 +9,9 @@ package {
       eq(1, 1, "b")
       eq(1, 2)
 
+      eq([1, 2], [1, 2])
+      eq([1, 2], [3, 4])
+
       eq(123, "123")
       Knock.equal = function (a: *, b: *): Boolean { return a === b }
       eq(123, "123")
