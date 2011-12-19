@@ -2,7 +2,7 @@ knock-flash
 ===========
 
 `knock-flash` is a lightweight ActionScript 3 testing library.  It
-uses [`flash-stdio`][] to print test results to standard output in a
+uses [`stdio-flash`][] to print test results to standard output in a
 line-based format called [Knock][], which is a simplified version of
 [TAP][].
 
@@ -32,8 +32,8 @@ And now we’ll run it, using [`run-swf`][]:
 Pretty easy, right?
 
 
-[`flash-stdio`]: https://github.com/dbrock/flash-stdio
+[`stdio-flash`]: https://github.com/dbrock/stdio-flash
 [Knock]: https://github.com/chneukirchen/knock/
 [TAP]: http://en.wikipedia.org/wiki/Test_Anything_Protocol
 [`fcshc`]: https://github.com/dbrock/fcshd
-[`run-swf`]: https://dbrock.github.com/flash-stdio/run-swf.1
+[`run-swf`]: https://dbrock.github.com/stdio-flash/run-swf.1
