@@ -3,7 +3,7 @@ package {
 
   public class example_test extends Test {
     // See `example_test.expected' for expected results.
-    override public function run(): void {
+    override public function run(callback: Function): void {
       ok(true)
       ok(true, "a")
       eq(1, 1, "b")
@@ -15,6 +15,8 @@ package {
       eq(123, "123")
       Knock.equal = function (a: *, b: *): Boolean { return a === b }
       eq(123, "123")
+
+      callback()
     }
   }
 }

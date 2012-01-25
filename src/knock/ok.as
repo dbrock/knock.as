@@ -11,6 +11,10 @@ package knock {
     if (passed) {
       process.puts("ok" + description)
     } else {
+      if (Test.current !== null) {
+        Test.current.failed = true
+      }
+
       process.puts("not ok" + description)
 
       if (diagnose !== null) {

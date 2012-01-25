@@ -15,12 +15,13 @@ file "example_test.swf" => [swc, "example_test.as"] do
 end
 
 task :test => ["example_test.swf", "example_test.expected"] do
-  sh "run-swf example_test.swf > example_test.actual"
+  system "run-stdio-swf example_test.swf > example_test.actual"
+  ok $? != 0, "exit status should not be 0"
   patch = `diff -u example_test.{expected,actual}`
-  if $? == 0
-    puts "ok"
-  else
-    puts "not ok"
-    puts patch.gsub(/^/, "# ")
-  end
+  ok $? == 0, "output matches expected" do patch end
+end
+
+def ok(passed, message)
+  puts "#{"not " unless passed}ok - #{message}"
+  puts yield.gsub(/^/, "# ") unless passed
 end
