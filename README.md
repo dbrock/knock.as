@@ -12,10 +12,9 @@ Here’s an example test:
       import knock.*
     
       public class example_test extends Test {
-        override public function run(callback: Function): void {
+        public function run(): void {
           eq(1 + 2, 3, "basic arithmetic")
           eq(1.1 + 2.2, 3.3, "floating-point math")
-          callback()
         }
       }
     }
