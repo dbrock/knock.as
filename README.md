@@ -1,8 +1,8 @@
-knock-flash
-===========
+knock.as
+========
 
-`knock-flash` is a lightweight ActionScript 3 testing library.  It
-uses [`stdio-flash`][] to print test results to standard output in a
+`knock.as` is a very lightweight ActionScript 3 testing library.
+It uses [`stdio.as`][] to print test results to standard output in a
 line-based format called [Knock][], which is a simplified version of
 [TAP][].
 
@@ -12,9 +12,10 @@ Here’s an example test:
       import knock.*
     
       public class example_test extends Test {
-        override public function run(): void {
+        override public function run(callback: Function): void {
           eq(1 + 2, 3, "basic arithmetic")
           eq(1.1 + 2.2, 3.3, "floating-point math")
+          callback()
         }
       }
     }
@@ -23,9 +24,9 @@ Let’s compile it using [`fcshc`][]:
 
     $ fcshc example_test.as -l knock
 
-And now we’ll run it, using [`run-swf`][]:
+And now we’ll run it, using [`run-stdio-swf`][]:
 
-    $ run-swf example_test.swf
+    $ run-stdio-swf example_test.swf
     ok - basic arithmetic
     not ok - floating-point math
     # expected 3.3, got 3.3000000000000003
@@ -33,8 +34,8 @@ And now we’ll run it, using [`run-swf`][]:
 Pretty easy, right?
 
 
-[`stdio-flash`]: https://github.com/dbrock/stdio-flash
+[`stdio.as`]: https://github.com/dbrock/stdio.as
 [Knock]: https://github.com/chneukirchen/knock/
 [TAP]: http://en.wikipedia.org/wiki/Test_Anything_Protocol
 [`fcshc`]: https://github.com/dbrock/fcshd
-[`run-swf`]: https://dbrock.github.com/stdio-flash/run-swf.1
+[`run-stdio-swf`]: https://dbrock.github.com/stdio.as/run-stdio-swf.1
