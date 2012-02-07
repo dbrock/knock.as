@@ -2,26 +2,24 @@ package knock {
   import stdio.process
 
   public function ok(
-    passed: Boolean,
-    description: String = null,
-    diagnose: Function = null
+    pass: Boolean,
+    desc: String = null,
+    diag: Function = null
   ): void {
-    description = description === null ? "" : " - " + description
+    desc = desc === null ? "" : " - " + desc
 
-    if (passed) {
-      process.puts("ok" + description)
+    if (pass) {
+      process.puts("ok" + desc)
     } else {
-      if (Test.current !== null) {
-        Test.current.failed = true
-      }
+      process.puts("not ok" + desc)
 
-      process.puts("not ok" + description)
-
-      if (diagnose !== null) {
-        for each (var line: String in diagnose().split("\n")) {
+      if (diag !== null) {
+        for each (var line: String in diag().split("\n")) {
           process.puts("# " + line)
         }
       }
+
+      Test.failed = true
     }
   }
 }

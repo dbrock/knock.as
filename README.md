@@ -22,7 +22,7 @@ Here’s an example test:
 
 Let’s compile it using [`fcshc`][]:
 
-    $ fcshc example_test.as -l knock
+    $ fcshc -lknock example_test.as
 
 And now we’ll run it, using [`run-stdio-swf`][]:
 
